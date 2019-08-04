@@ -54,12 +54,12 @@ class LondonMetroUrlBuilder: RequestBuilder {
     }
 }
 
-extension Endpoint where T == Dummy {
+extension Endpoint where ReturnType == Dummy {
     static func bikePoint(id: String) -> Endpoint {
         return Endpoint(
             path: "/BikePoint/\(id)", body: nil,
             queryItems: [],
-            parse: T.decode
+            parse: ReturnType.decode
         )
     }
 }

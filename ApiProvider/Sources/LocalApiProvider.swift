@@ -10,9 +10,11 @@ import Foundation
 
 public class LocalApiProvider: ApiProvider {
     let basePath: String
+    let bundle: Bundle
     
-    init(localPath: String) {
+    public init(bundle: Bundle, localPath: String) {
         basePath = localPath
+        self.bundle = bundle
     }
     
     // Map the call to the folder structure (which is default behaviour)
@@ -26,16 +28,20 @@ public class LocalApiProvider: ApiProvider {
         }
         
         guard
-            let resourceUrl = Bundle.main.url(forResource: relativeString, withExtension: ".json"),
-            let data = try? Data(contentsOf: resourceUrl),
-            let result = try? endpoint.parse(data)
+            let resourceUrl = bundle.url(forResource: relativeString, withExtension: ".json"),
+            let data = try? Data(contentsOf: resourceUrl)
         else {
-            let errorMessage = "** Resource file not found for DataProvider: \(resourcePath.absoluteString).json"
+            let errorMessage = "** Resource file not found: \(resourcePath.absoluteString).json"
             print(errorMessage)
             handler(.failure(ApiProviderError.invalidURL))
             return
         }
-
-        handler(.success(result))
+        
+        do {
+            let result = try endpoint.parse(data)
+            handler(.success(result))
+        } catch {
+            handler(.failure(error))
+        }
     }
 }

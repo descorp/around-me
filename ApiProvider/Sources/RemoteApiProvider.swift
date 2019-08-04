@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol RequestBuilder {
-    func buildRequest<T>(for endpoint: Endpoint<T>) -> URLRequest?
+    func buildRequest<T>(for endpoint: Endpoint<T>) throws -> URLRequest
 }
 
 public class RemoteApiProvider: ApiProvider {
@@ -23,8 +23,11 @@ public class RemoteApiProvider: ApiProvider {
         self.builder = builder
     }
     
-    public func request<T>(_ endpoint: Endpoint<T>, then handler: @escaping (Result<T>) -> Void) {
-        guard let request = builder.buildRequest(for: endpoint) else {
+    open func request<T>(_ endpoint: Endpoint<T>, then handler: @escaping (Result<T>) -> Void) {
+        let request: URLRequest
+        do {
+            request = try builder.buildRequest(for: endpoint)
+        } catch {
             return handler(.failure(ApiProviderError.invalidURL))
         }
         
@@ -42,11 +45,9 @@ public class RemoteApiProvider: ApiProvider {
             do {
                 let result = try endpoint.parse(data)
                 handler(.success(result))
-            }
-            catch let error {
+            } catch {
                 handler(.failure(error))
             }
-            
         }
         
         task.resume()

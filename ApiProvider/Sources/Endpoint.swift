@@ -8,16 +8,18 @@
 
 import Foundation
 
-public struct Endpoint<T> {
-    public var body: Data?    
+public struct Endpoint<ReturnType> {
+    public let method: String
+    public let body: Data?
     public let path: String
     public let queryItems: [URLQueryItem]
-    public let parse: (Data) throws -> T
+    public let parse: (Data) throws -> ReturnType
     
-    public init(path: String, body: Data? = nil, queryItems: [URLQueryItem] = [], parse: @escaping (Data) throws -> T) {
+    public init(path: String, method: String = "GET", body: Data? = nil, queryItems: [URLQueryItem] = [], parse: @escaping (Data) throws -> ReturnType) {
         self.path = path
         self.body = body
         self.queryItems = queryItems
         self.parse = parse
+        self.method = method
     }
 }
