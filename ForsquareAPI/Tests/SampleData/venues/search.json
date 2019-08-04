@@ -1,0 +1,157 @@
+{
+    "meta": {
+        "code": 200,
+        "requestId": "5d46dee44eefd00026b4f330"
+    },
+    "response": {
+        "venues": [
+            {
+                "id": "4f8bb1ffe4b01f95a4f68218",
+                "name": "Halte Casparuslaan",
+                "location": {
+                    "address": "Casparuslaan",
+                    "lat": 52.30925939218966,
+                    "lng": 5.03530365416155,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 52.30925939218966,
+                            "lng": 5.03530365416155
+                        }
+                    ],
+                    "distance": 487,
+                    "cc": "NL",
+                    "country": "Netherlands",
+                    "formattedAddress": [
+                        "Casparuslaan",
+                        "Netherlands"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "52f2ab2ebcbc57f1066b8b4f",
+                        "name": "Bus Stop",
+                        "pluralName": "Bus Stops",
+                        "shortName": "Bus Stop",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/busstation_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1564925669",
+                "hasPerk": false
+            },
+            {
+                "id": "529624bd11d2919bd79bb5a0",
+                "name": "Van Houten Industriepark",
+                "location": {
+                    "lat": 52.3054200708013,
+                    "lng": 5.034931818542193,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 52.3054200708013,
+                            "lng": 5.034931818542193
+                        }
+                    ],
+                    "distance": 906,
+                    "cc": "NL",
+                    "country": "Netherlands",
+                    "formattedAddress": [
+                        "Netherlands"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "52f2ab2ebcbc57f1066b8b4f",
+                        "name": "Bus Stop",
+                        "pluralName": "Bus Stops",
+                        "shortName": "Bus Stop",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/busstation_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1564925669",
+                "hasPerk": false
+            },
+            {
+                "id": "4d4f931e9ffc236af06210a7",
+                "name": "Bushalte L. Eelantsplein",
+                "location": {
+                    "lat": 52.312976,
+                    "lng": 5.044853,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 52.312976,
+                            "lng": 5.044853
+                        }
+                    ],
+                    "distance": 489,
+                    "cc": "NL",
+                    "country": "Netherlands",
+                    "formattedAddress": [
+                        "Netherlands"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "52f2ab2ebcbc57f1066b8b4f",
+                        "name": "Bus Stop",
+                        "pluralName": "Bus Stops",
+                        "shortName": "Bus Stop",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/busstation_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1564925669",
+                "hasPerk": false
+            },
+            {
+                "id": "500647e9e4b02532d54188a8",
+                "name": "Halte Casparuslaan",
+                "location": {
+                    "lat": 52.30382269653181,
+                    "lng": 5.036707008077787,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 52.30382269653181,
+                            "lng": 5.036707008077787
+                        }
+                    ],
+                    "distance": 1066,
+                    "cc": "NL",
+                    "country": "Netherlands",
+                    "formattedAddress": [
+                        "Netherlands"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "52f2ab2ebcbc57f1066b8b4f",
+                        "name": "Bus Stop",
+                        "pluralName": "Bus Stops",
+                        "shortName": "Bus Stop",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/busstation_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1564925669",
+                "hasPerk": false
+            }
+        ],
+        "confident": true
+    }
+}
