@@ -47,7 +47,7 @@ struct Dummy: Codable {
 }
 
 class LondonMetroUrlBuilder: RequestBuilder {
-    func buildRequest<T>(for endpoint: Endpoint<T>) -> URLRequest? {
+    func buildRequest<T>(for endpoint: Endpoint<T>) throws -> URLRequest {
         var baseUrl = URL(string: "https://api.tfl.gov.uk")!
         baseUrl.appendPathComponent(endpoint.path)
         return URLRequest(url: baseUrl)
