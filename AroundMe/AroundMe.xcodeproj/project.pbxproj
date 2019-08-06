@@ -53,8 +53,6 @@
 		405F95C122FA0FCC001B3BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		405F95C222FA0FCC001B3BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/AppDelegate.swift; sourceTree = "<group>"; };
 		405F95CA22FA1F79001B3BD6 /* AroundMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AroundMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		405F95E322FA1F7B001B3BD6 /* AroundMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundMeTests.swift; sourceTree = "<group>"; };
-		405F95E522FA1F7B001B3BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		"AroundMe::AroundMeTests::Product" /* AroundMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = AroundMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -96,15 +94,6 @@
 			path = Sources/Base.lproj;
 			sourceTree = "<group>";
 		};
-		405F95E222FA1F7B001B3BD6 /* AroundMeTests */ = {
-			isa = PBXGroup;
-			children = (
-				405F95E322FA1F7B001B3BD6 /* AroundMeTests.swift */,
-				405F95E522FA1F7B001B3BD6 /* Info.plist */,
-			);
-			path = AroundMeTests;
-			sourceTree = "<group>";
-		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,17 +113,15 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
-				405F95E222FA1F7B001B3BD6 /* AroundMeTests */,
 				OBJ_14 /* Products */,
 				OBJ_19 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -229,15 +216,15 @@
 				en,
 				Base,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				405F95C922FA1F79001B3BD6 /* AroundMe */,
+				"AroundMe::AroundMeTests" /* AroundMeTests */,
 				"AroundMe::SwiftPMPackageDescription" /* AroundMePackageDescription */,
 				"AroundMe::AroundMePackageTests::ProductTarget" /* AroundMePackageTests */,
-				"AroundMe::AroundMeTests" /* AroundMeTests */,
-				405F95C922FA1F79001B3BD6 /* AroundMe */,
 			);
 		};
 /* End PBXProject section */
@@ -338,7 +325,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "AroundMe/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Sources/Preview\\ Content";
 				DEVELOPMENT_TEAM = R596F9CQZ5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -356,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = AroundMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -404,7 +391,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_ASSET_PATHS = "AroundMe/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Sources/Preview\\ Content";
 				DEVELOPMENT_TEAM = R596F9CQZ5;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
@@ -417,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = AroundMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
