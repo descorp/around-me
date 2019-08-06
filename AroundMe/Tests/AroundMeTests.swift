@@ -1,12 +1,5 @@
-//
-//  AroundMeTests.swift
-//  AroundMeTests
-//
-//  Created by Vladimir Abramichev on 03/08/2019.
-//  Copyright © 2019 Vladimir Abramichev. All rights reserved.
-//
-
 import XCTest
+import class Foundation.Bundle
 @testable import AroundMe
 
 class AroundMeTests: XCTestCase {
@@ -31,4 +24,20 @@ class AroundMeTests: XCTestCase {
         }
     }
 
+
+    /// Returns path to the built products directory.
+    var productsDirectory: URL {
+      #if os(macOS)
+        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
+            return bundle.bundleURL.deletingLastPathComponent()
+        }
+        fatalError("couldn't find the products directory")
+      #else
+        return Bundle.main.bundleURL
+      #endif
+    }
+
+    static var allTests = [
+        ("testExample", testExample),
+    ]
 }
