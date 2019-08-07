@@ -8,12 +8,12 @@
 import Foundation
 
 public struct Coordinates: Codable {
-    let lat, lng: Double
+    public let lat, lng: Double
 }
 
 public struct Location: Codable {
-    let lat, lng: Double
-    let labeledLatLngs: [Coordinates]
-    let formattedAddress: [String]
-    let address, cc, city, state, country, crossStreet, postalCode, neighborhood: String?
+    public let lat, lng: Double
+    public let labeledLatLngs: [Coordinates]
+    public let formattedAddress: [String]
+    public let address, cc, city, state, country, crossStreet, postalCode, neighborhood: String?
 }

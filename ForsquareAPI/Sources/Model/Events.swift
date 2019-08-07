@@ -7,34 +7,34 @@
 
 import Foundation
 
-struct Events: Codable {
-    let count: Int
-    let summary: String
-    let items: [EventsItem]
+public struct Events: Codable {
+    public let count: Int
+    public let summary: String
+    public let items: [EventsItem]
 }
 
-struct EventsItem: Codable {
-    let id, name: String
-    let categories: [Category]
-    let startAt, endAt: Int
-    let allDay: Bool
-    let timeZone, text: String
-    let url: String
-    let images: [JSONAny]
-    let provider: Provider
-    let stats: Stats
+public struct EventsItem: Codable {
+    public let id, name: String
+    public let categories: [Category]
+    public let startAt, endAt: Int
+    public let allDay: Bool
+    public let timeZone, text: String
+    public let url: String
+    public let images: [JSONAny]
+    public let provider: Provider
+    public let stats: Stats
 }
 
-struct Stats: Codable {
-    let checkinsCount, usersCount: Int
+public struct Stats: Codable {
+    public let checkinsCount, usersCount: Int
 }
 
-struct Provider: Codable {
-    let name: String
-    let iconURL: IconURL
-    let urlText: String
+public struct Provider: Codable {
+    public let name: String
+    public let iconURL: IconURL
+    public let urlText: String
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case name
         case iconURL = "iconUrl"
         case urlText

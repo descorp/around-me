@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct Category: Codable {
-    let categories: [Category]?
-    let icon: Icon?
-    let id, name, pluralName, shortName: String?
+public struct Category: Codable {
+    public let id, name: String
+    public let categories: [Category]?
+    public let icon: Icon
+    public let pluralName, shortName: String?
 }
 
 public enum CategorieID: String {

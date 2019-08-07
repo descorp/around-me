@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: Encode/decode helpers
 
-class JSONNull: Codable, Hashable {
+public class JSONNull: Codable, Hashable {
     
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
@@ -34,28 +34,28 @@ class JSONNull: Codable, Hashable {
     }
 }
 
-class JSONCodingKey: CodingKey {
-    let key: String
+public class JSONCodingKey: CodingKey {
+    public let key: String
     
-    required init?(intValue: Int) {
+    public required init?(intValue: Int) {
         return nil
     }
     
-    required init?(stringValue: String) {
+    public required init?(stringValue: String) {
         key = stringValue
     }
     
-    var intValue: Int? {
+    public var intValue: Int? {
         return nil
     }
     
-    var stringValue: String {
+    public var stringValue: String {
         return key
     }
 }
 
-class JSONAny: Codable {
-    let value: Any
+public class JSONAny: Codable {
+    public let value: Any
     
     static func decodingError(forCodingPath codingPath: [CodingKey]) -> DecodingError {
         let context = DecodingError.Context(codingPath: codingPath, debugDescription: "Cannot decode JSONAny")

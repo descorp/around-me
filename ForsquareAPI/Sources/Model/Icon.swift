@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct Photos: Codable {
-    let count: Int
-    let groups: [JSONAny]
+public struct Photos: Codable {
+    public let count: Int
+    public let groups: [JSONAny]
 }
 
-struct Icon: Codable {
-    let prefix: String
-    let suffix: Suffix
+public struct Icon: Codable {
+    public let prefix: String
+    public let suffix: Suffix
 }
 
-enum Suffix: String, Codable {
+public enum Suffix: String, Codable {
     case png = ".png"
     case jpeg = ".jpeg"
 }
 
-struct IconURL: Codable {
-    let prefix: String
-    let sizes: [Int]
-    let name: String
+public struct IconURL: Codable {
+    public let prefix: String
+    public let sizes: [Int]
+    public let name: String
 }
