@@ -18,6 +18,7 @@ struct MapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
         uiView.isUserInteractionEnabled = false
-        uiView.setRegion(MKCoordinateRegion(center: locationManager.coordinates, span: span), animated: true)
+        uiView.setRegion(MKCoordinateRegion(center: locationManager.currentLocation, span: span), animated: true)
+        uiView.showsUserLocation = true
     }
 }

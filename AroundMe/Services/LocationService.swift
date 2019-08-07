@@ -8,6 +8,7 @@
 import MapKit
 
 class LocationService: NSObject, CLLocationManagerDelegate {
+    private let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 52.313388, longitude: 5.037687)
     
     lazy var currentLocation: CLLocationCoordinate2D = {
         let manager = CLLocationManager()
@@ -21,6 +22,4 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         
         return manager.location?.coordinate ?? coordinates
     }()
-    
-    let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 52.313388, longitude: 5.037687)
 }
