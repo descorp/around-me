@@ -7,7 +7,13 @@
 
 import Foundation
 
-enum Categorie: String {
+struct Category: Codable {
+    let categories: [Category]?
+    let icon: Icon?
+    let id, name, pluralName, shortName: String?
+}
+
+public enum CategorieID: String {
     case museum = "4bf58dd8d48988d181941735"
     case publicArt = "507c8c4091d498d9fc8c67a9"
     

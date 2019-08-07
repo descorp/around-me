@@ -14,13 +14,13 @@ final class ForsquareAPITests: XCTestCase {
     let coordinates = Coordinates(lat: 52.313388, lng:  5.037687)
     
     func testCoordinateQuery() {
-        let sut = Endpoint.geyVenues(at: coordinates)
+        let sut = Endpoint.getVenues(at: coordinates)
         
         XCTAssertEqual(sut.queryItems[0].value, "52.313388,5.037687")
     }
     
     func testCategoryQuery() {
-        let sut = Endpoint.geyVenues(at: coordinates, categories: .metro, .food)
+        let sut = Endpoint.getVenues(at: coordinates, categories: .metro, .food)
         
         XCTAssertEqual(sut.queryItems[2].value!, "4bf58dd8d48988d1fd931735,4d4b7105d754a06374d81259")
     }

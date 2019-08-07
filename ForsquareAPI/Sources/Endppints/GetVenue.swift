@@ -8,8 +8,12 @@
 import Foundation
 import ApiProvider
 
-extension Endpoint where ReturnType == FoursquareResponce<VenueResponse> {
-    static func geyVenues(at location: Coordinates, radius: Int = 250, categories: Categorie...) -> Endpoint {
+public struct VenueResponse: Codable {
+    let venues: [Venue]
+}
+
+public extension Endpoint where ReturnType == FoursquareResponce<VenueResponse> {
+    static func getVenues(at location: Coordinates, radius: Int = 250, categories: CategorieID...) -> Endpoint {
         return Endpoint(
             path: "/venues/search",
             body: nil,
@@ -29,7 +33,7 @@ fileprivate extension Coordinates {
     }
 }
 
-fileprivate extension Array where Element == Categorie {
+fileprivate extension Array where Element == CategorieID {
     var queryString: String {
         var queryString = self.reduce("") { $0 + ",\($1.rawValue)" }
         if !queryString.isEmpty {

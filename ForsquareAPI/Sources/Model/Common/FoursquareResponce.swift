@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FoursquareResponce<T: Codable>: Codable {
+public struct FoursquareResponce<T: Codable>: Codable {
     let meta: Meta
     let response: T
 }

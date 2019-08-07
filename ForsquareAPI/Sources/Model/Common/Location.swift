@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Coordinates: Codable {
+public struct Coordinates: Codable {
     let lat, lng: Double
 }
 
-struct Location: Codable {
+public struct Location: Codable {
     let lat, lng: Double
     let labeledLatLngs: [Coordinates]
     let formattedAddress: [String]

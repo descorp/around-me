@@ -16,12 +16,6 @@ struct Venue: Codable {
     let events: Events?
 }
 
-struct Category: Codable {
-    let id, name, pluralName, shortName: String
-    let icon: Icon
-    let primary: Bool
-}
-
 struct VenuePage: Codable {
     let id: String
 }

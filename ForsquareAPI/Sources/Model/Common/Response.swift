@@ -15,7 +15,3 @@ struct SuggestedFilters: Codable {
 struct Filter: Codable {
     let name, key: String
 }
-
-struct VenueResponse: Codable {
-    let venues: [Venue]
-}
