@@ -8,7 +8,7 @@
 import ForsquareAPI
 import Combine
 
-class CategoryModel: ListItem, ObservableObject {
+class CategoryModel: ListItem {
     private let defaultIconSize = 64
     private let model: ForsquareAPI.Category
     

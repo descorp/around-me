@@ -9,7 +9,7 @@ import ForsquareAPI
 import Combine
 import MapKit
 
-class VenueModel: Identifiable, ObservableObject {
+class VenueModel: Identifiable {
     private let defaultIconSize = 64
     private let model: Venue
     

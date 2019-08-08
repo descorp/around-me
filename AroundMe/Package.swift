@@ -13,9 +13,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "AroundMe",
-            dependencies: ["ForsquareAPI"]),
+            dependencies: ["ForsquareAPI"],
+            path: "Sources"),
         .testTarget(
             name: "AroundMeTests",
-            dependencies: ["AroundMe"]),
+            dependencies: ["AroundMe"],
+            path: "Tests"),
     ]
 )

@@ -29,7 +29,7 @@ struct DropDownList<T>: View where T: ListItem {
     let rowHeight: CGFloat
     @State var isColapsed = true
     @State var selectedItem: T
-    var items: [T]
+    @Binding var items: [T]
     
     var body: some View {
         VStack(alignment: .center) {
