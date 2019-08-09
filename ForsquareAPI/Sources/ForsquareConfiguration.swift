@@ -5,7 +5,7 @@
 //  Created by Vladimir Abramichev on 04/08/2019.
 //
 
-import Foundation
+import ApiProvider
 
 enum ConfigParameter: String {
     case client_id

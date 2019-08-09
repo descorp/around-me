@@ -13,32 +13,34 @@ public struct VenueResponse: Codable {
 }
 
 public extension Endpoint where ReturnType == FoursquareResponce<VenueResponse> {
-    static func getVenues(at location: Coordinates, radius: Int = 250, categories: CategorieID...) -> Endpoint {
+    static func getVenues(at location: Coordinates, radius: Int = 250, categories: [String]? = nil) -> Endpoint {
+        var queryItems = [
+            URLQueryItem(name: "ll", value: location.queryString),
+            URLQueryItem(name: "radius", value: String(radius)) ]
+        
+        if let categories = categories {
+            queryItems.append(URLQueryItem(name: "categoryId", value: categories.joined(separator: ",")))
+        }
+        
         return Endpoint(
             path: "/venues/search",
             body: nil,
-            queryItems: [
-                URLQueryItem(name: "ll", value: location.queryString),
-                URLQueryItem(name: "radius", value: String(radius)),
-                URLQueryItem(name: "categoryId", value: categories.queryString)
-            ],
+            queryItems: queryItems,
             parse: ReturnType.decode
         )
+    }
+    
+    static func getVenues(at location: Coordinates, radius: Int = 250, categories: String...) -> Endpoint {
+        return Endpoint.getVenues(at: location, radius: radius, categories: categories)
+    }
+    
+    static func getVenues(at location: Coordinates, radius: Int = 250, categories: CategorieID...) -> Endpoint {
+        return Endpoint.getVenues(at: location, radius: radius, categories: categories.map { $0.rawValue } )
     }
 }
 
 fileprivate extension Coordinates {
     var queryString: String {
         return "\(lat),\(lng)"
-    }
-}
-
-fileprivate extension Array where Element == CategorieID {
-    var queryString: String {
-        var queryString = self.reduce("") { $0 + ",\($1.rawValue)" }
-        if !queryString.isEmpty {
-            queryString.removeFirst()
-        }
-        return queryString
     }
 }

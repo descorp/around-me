@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ApiProvider
 
 public class ForsquareUrlRequestBuilder: RequestBuilder {
     
