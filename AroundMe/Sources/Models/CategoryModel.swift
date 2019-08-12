@@ -10,22 +10,15 @@ import Combine
 
 class CategoryModel: ListItem {
     private let defaultIconSize = 64
-    private let model: ForsquareAPI.Category
     
-    var id: String {
-        return model.id
-    }
-    
-    var value: String {
-        return model.name
-    }
-    
-    var iconUrl: String {
-        return model.icon.prefix + "\(defaultIconSize)" + model.icon.suffix.rawValue
-    }
+    let id: String
+    let name: String
+    let iconUrl: String
     
     init(model: ForsquareAPI.Category) {
-        self.model = model
+        id = model.id
+        name = model.name
+        iconUrl = model.icon.prefix + "\(defaultIconSize)" + model.icon.suffix.rawValue
     }
 }
 

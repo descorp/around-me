@@ -1,6 +1,6 @@
 import XCTest
 import class Foundation.Bundle
-@testable import AroundMe
+@testable import AroundMeApp
 
 class AroundMeTests: XCTestCase {
 

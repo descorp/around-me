@@ -8,10 +8,10 @@
 import SwiftUI
 
 protocol ListItem: class, Hashable, Identifiable {
-    var value: String { get }
+    var name: String { get }
 }
 
-struct DropDownListItem<T>: View where T:ListItem {
+struct DropDownListItem<T>: View where T: ListItem {
     var item: T
     
     init(item: T) {
@@ -20,7 +20,7 @@ struct DropDownListItem<T>: View where T:ListItem {
     
     var body: some View {
         HStack(alignment: .center, spacing: 16.0) {
-            Text(item.value)
+            Text(item.name)
         }
     }
 }

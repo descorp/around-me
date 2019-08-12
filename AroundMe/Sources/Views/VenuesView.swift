@@ -10,9 +10,9 @@ import SwiftUI
 import MapKit
 import Combine
 
-struct RootView : View {
+struct VenuesView : View {
     
-    @ObservedObject var viewModel: RootViewModel
+    @ObservedObject var viewModel: VenuesViewModel
     
     var body: some View {
         ZStack(alignment: .top) {
