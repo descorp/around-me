@@ -9,6 +9,8 @@ import SwiftUI
 
 extension Coordinator {
     func render<T: View>(view: T) {
-        (self.rootNavigation as? UISwiftRenderingViewController)?.render(view: view)
+        DispatchQueue.main.async {
+            (self.rootNavigation as? UISwiftRenderingViewController)?.render(view: view)
+        }
     }
 }

@@ -10,25 +10,31 @@ import ForsquareAPI
 import MapKit
 
 class VenuesViewModel: ObservableObject {
-    
+    private let venueLoader: VenueLoader
+    private let locationService: LocationService
     private let visibleCategories = CategorieID.allCases.map { $0.rawValue }
+    private var locationSubscription: AnyCancellable?
     
+    @Published var curentLocation: CLLocation
     @Published var venuse: [VenueModel] = []
-    @Published var selectedCategories: CategoryModel
+    @Published var selectedCategorie: CategoryModel
     var categories: [CategoryModel]
     
-    private let  venueLoader: VenueLoader
-    
-    internal init(venueService: VenueLoader, categories: [ForsquareAPI.Category]) {
+    internal init(locationService: LocationService, venueService: VenueLoader, categories: [ForsquareAPI.Category]) {
+        self.locationService = locationService
         self.venueLoader = venueService
-        let flatList: [ForsquareAPI.Category] = categories.reduce(categories) { $0 + ( $1.categories ?? []) }
-        let categories = flatList.map(CategoryModel.init)
+        self.curentLocation = locationService.currentLocation
+        
+        let categories = categories.reduce(categories) { $0 + ( $1.categories ?? []) }.map(CategoryModel.init)
         self.categories = categories
-        selectedCategories = self.categories.first { $0.id == CategorieID.food.rawValue } ?? categories[0]
+        selectedCategorie = self.categories.first { $0.id == CategorieID.food.rawValue } ?? categories[0]
+        
+        locationSubscription = locationService.didChange.sink(receiveValue: locationUpdated)
     }
 
-    func locationUpdated(coordinates: CLLocationCoordinate2D) {
-        venueLoader.getVenues(around: coordinates, category: selectedCategories, radius: 1000)
+    func locationUpdated(coordinates: CLLocation) {
+        curentLocation = coordinates
+        venueLoader.getVenues(around: coordinates.coordinate, category: selectedCategorie, radius: 1000)
     }
     
 }

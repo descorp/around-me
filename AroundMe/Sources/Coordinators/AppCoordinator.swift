@@ -19,17 +19,15 @@ class AppCoordinator: Coordinator {
     }
     
     override func start() {
-        let viewModel = InitViewModel(categoryLoader: Resolver.shared.get())
-        let initCoordinator = InitCoordinator(viewModel: viewModel, parentCoordinator: self)
+        let initCoordinator = InitCoordinator(parentCoordinator: self)
         initCoordinator.start()
     }
     
     static fileprivate func loadDependencies() {
         let apiProvider: ApiProvider = LocalApiProvider(bundle: Bundle.main, localPath: "SampleData")
         Resolver.shared.set(value: apiProvider)
-        let venueLoader: VenueLoader = VenueLoaderImplementation(provider: Resolver.shared.get())
-        Resolver.shared.set(value: venueLoader)
-        let categoryLoader: CategoryLoader = CategoryLoaderImplementation(provider: Resolver.shared.get())
-        Resolver.shared.set(value: categoryLoader)
+        Resolver.shared.set(value: VenueLoaderImplementation(provider: Resolver.shared.get()) as VenueLoader)
+        Resolver.shared.set(value: CategoryLoaderImplementation(provider: Resolver.shared.get()) as CategoryLoader)
+        Resolver.shared.set(value: LocationServiceImplementation() as LocationService)
     }
 }

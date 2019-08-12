@@ -28,7 +28,7 @@ struct DropDownListItem<T>: View where T: ListItem {
 struct DropDownList<T>: View where T: ListItem {
     let rowHeight: CGFloat
     @State var isColapsed = true
-    @State var selectedItem: T
+    @Binding var selectedItem: T
     @Binding var items: [T]
     
     var body: some View {

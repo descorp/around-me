@@ -16,9 +16,9 @@ struct VenuesView : View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            MapView()
+            MapView(currentLocation: $viewModel.curentLocation)
             DropDownList(rowHeight: 72,
-                         selectedItem: viewModel.categories[0],
+                         selectedItem: $viewModel.selectedCategorie,
                          items: $viewModel.categories)
                 .padding(16)
                 .clipShape(RoundedRectangle(cornerRadius: 36.0, style: .continuous))

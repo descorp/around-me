@@ -16,7 +16,9 @@ class VenuesCoordinator: Coordinator {
     
     init(categories: [ForsquareAPI.Category], parentCoordinator: Coordinator? ) {
         self.categories = categories
-        self.viewModel = VenuesViewModel(venueService: Resolver.shared.get(), categories: categories)
+        self.viewModel = VenuesViewModel(locationService: Resolver.shared.get(),
+                                         venueService: Resolver.shared.get(),
+                                         categories: categories)
         super.init(parentCoordinator: parentCoordinator)
     }
 
