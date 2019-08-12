@@ -14,11 +14,9 @@ import ForsquareAPI
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator: Coordinator!
-    var window: UIWindow!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        coordinator = AppCoordinator(window: window)
+        coordinator = AppCoordinator(window: UIWindow())
         coordinator.start()
         return true
     }

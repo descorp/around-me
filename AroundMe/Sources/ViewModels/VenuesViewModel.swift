@@ -10,14 +10,20 @@ import ForsquareAPI
 import MapKit
 
 class VenuesViewModel: ObservableObject {
+    private var lastCoordinates = CLLocation(latitude: 0, longitude: 0)
     private let venueLoader: VenueLoader
     private let locationService: LocationService
     private let visibleCategories = CategorieID.allCases.map { $0.rawValue }
     private var locationSubscription: AnyCancellable?
+    private var venuesSubscription: AnyCancellable?
     
     @Published var curentLocation: CLLocation
-    @Published var venuse: [VenueModel] = []
-    @Published var selectedCategorie: CategoryModel
+    @Published var venues: [MKAnnotation] = []
+    @Published var selectedCategorie: CategoryModel {
+        didSet {
+            venueLoader.getVenues(around: lastCoordinates.coordinate, category: selectedCategorie, radius: 250)
+        }
+    }
     var categories: [CategoryModel]
     
     internal init(locationService: LocationService, venueService: VenueLoader, categories: [ForsquareAPI.Category]) {
@@ -30,11 +36,27 @@ class VenuesViewModel: ObservableObject {
         selectedCategorie = self.categories.first { $0.id == CategorieID.food.rawValue } ?? categories[0]
         
         locationSubscription = locationService.didChange.sink(receiveValue: locationUpdated)
+        venuesSubscription = venueService.didChange
+            .map({ (items: [Venue]) -> [VenueModel] in
+                return items.map(VenueModel.init)
+            })
+            .sink(receiveCompletion: onFailure, receiveValue: onSuccess)
     }
 
     func locationUpdated(coordinates: CLLocation) {
         curentLocation = coordinates
-        venueLoader.getVenues(around: coordinates.coordinate, category: selectedCategorie, radius: 1000)
+        if lastCoordinates.distance(from: curentLocation) > 100 {
+            lastCoordinates = curentLocation
+            venueLoader.getVenues(around: coordinates.coordinate, category: selectedCategorie, radius: 250)
+        }
     }
     
+    func onSuccess(_ input: [VenueModel]) {
+        DispatchQueue.main.async {
+            self.venues = input
+        }
+    }
+    
+    func onFailure(completion: Subscribers.Completion<Error>) {
+    }
 }

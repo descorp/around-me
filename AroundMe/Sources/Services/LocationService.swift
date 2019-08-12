@@ -10,7 +10,7 @@ import Combine
 
 protocol LocationService {
     var currentLocation: CLLocation { get }
-    var didChange: PassthroughSubject<CLLocation,Never> { get }
+    var didChange: PassthroughSubject<CLLocation, Never> { get }
 }
 
 
