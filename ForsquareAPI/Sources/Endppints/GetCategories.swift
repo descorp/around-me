@@ -7,11 +7,11 @@
 
 import ApiProvider
 
-struct CategoriesResponse: Codable {
-    let categories: [Category]
+public struct CategoriesResponse: Codable {
+    public let categories: [Category]
 }
 
-extension Endpoint where ReturnType == FoursquareResponce<CategoriesResponse> {
+public extension Endpoint where ReturnType == FoursquareResponce<CategoriesResponse> {
     static func getCategories() -> Endpoint {
         return Endpoint(
             path: "/venues/categories",

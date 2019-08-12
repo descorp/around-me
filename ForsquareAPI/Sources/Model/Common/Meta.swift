@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Meta: Codable {
-    let code: Int
-    let requestID: String
+public struct Meta: Codable {
+    public let code: Int
+    public let requestID: String
     
     enum CodingKeys: String, CodingKey {
         case code

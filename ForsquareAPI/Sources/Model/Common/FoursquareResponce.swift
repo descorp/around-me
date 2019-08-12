@@ -8,6 +8,6 @@
 import Foundation
 
 public struct FoursquareResponce<T: Codable>: Codable {
-    let meta: Meta
-    let response: T
+    public let meta: Meta
+    public let response: T
 }

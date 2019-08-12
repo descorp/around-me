@@ -9,7 +9,7 @@ import Foundation
 import ApiProvider
 
 public struct VenueResponse: Codable {
-    let venues: [Venue]
+    public let venues: [Venue]
 }
 
 public extension Endpoint where ReturnType == FoursquareResponce<VenueResponse> {
