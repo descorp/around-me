@@ -1,5 +1,5 @@
-<img src="https://uc4fa62d35412d522e669c49f804.previews.dropboxusercontent.com/p/thumb/AAhm9FVZ3GY9S7_n40KedlXvAeLMt9PGCiA-GvtmORDtJDGLcgWNWTm_kRUkFgWiott1qujCpT2MED14J8bjL1Arg8Huw-7-cLT5_XDG9nsTbWHV2SXrx8l9lPP_5QTo1Lh-Y95l3aXKcEeZIOhaP7SvFAXvXhKBBXJTqiGZnYRvHkCaJz9subOoan4tAs5PbSav7Ax0dQjJJmz4rEBZIv_TVypdFGEMDjdgZKM5hewScIUEKfttCpAyQ6i7gVSvCAlAZjqWK6floTdfUyP-15vERFMdVyW5uVhwDirDSaO8CMSIjN4IgxOVViib4PIztCrZ5ZRvAsJDvAZwno8B6cBV/p.png?fv_content=true&size_mode=5" alt="logo" width="250"/>
-![codebeat badge](https://codebeat.co/badges/0711f644-38b5-4b49-9528-caaeb3c32c82)](https://codebeat.co/projects/github-com-descorp-around-me-master)
+
+[![codebeat badge](https://codebeat.co/badges/0711f644-38b5-4b49-9528-caaeb3c32c82)](https://codebeat.co/projects/github-com-descorp-around-me-master)
 ![Swift 5.1](https://img.shields.io/badge/Swift-5.1-green.svg?style=flat)
 
 # Around Me
