@@ -17,10 +17,8 @@ struct DropDownListItem<T>: View where T: ListItem {
 
     var body: some View {
         HStack(alignment: .center, spacing: 16.0) {
-            URLImage(url: self.item.iconUrl, contentMode: .scaleAspectFit)
-                .frame(width: 40, height: 40)
-                .background(Color.accentColor)
-                .cornerRadius(8)
+            URLImage(url: self.item.iconUrl, contentMode: .scaleAspectFit, tintColor: #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1))
+                .frame(width: 32, height:32)
             Text(item.name)
         }
     }
