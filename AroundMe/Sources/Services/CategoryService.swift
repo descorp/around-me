@@ -7,17 +7,17 @@
 
 import Foundation
 import Combine
-import ForsquareAPI
+import FoursquareAPI
 import ApiProvider
 
 protocol CategoryLoader {
     func getCategories()
-    var didChange: PassthroughSubject<[ForsquareAPI.Category], Error> { get }
+    var didChange: PassthroughSubject<[FoursquareAPI.Category], Error> { get }
 }
 
 class CategoryLoaderImplementation: CategoryLoader {
     private let apiProvider: ApiProvider
-    var didChange = PassthroughSubject<[ForsquareAPI.Category], Error>()
+    var didChange = PassthroughSubject<[FoursquareAPI.Category], Error>()
     
     init(provider: ApiProvider) {
         self.apiProvider = provider
@@ -29,7 +29,13 @@ class CategoryLoaderImplementation: CategoryLoader {
             case .success(let result):
                 self.didChange.send(result.response.categories)
             case .failure(let error):
-                self.didChange.send(completion: Subscribers.Completion<Error>.failure(error))
+                var proccessedError = error
+                if case ApiProviderError.response(code: let code, message: let message) = error {
+                    proccessedError = NSError(domain: NSURLErrorDomain,
+                                              code: code,
+                                              userInfo: [NSLocalizedDescriptionKey: message ?? ""])
+                }
+                self.didChange.send(completion: Subscribers.Completion<Error>.failure(proccessedError))
             }
         }
     }

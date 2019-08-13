@@ -22,11 +22,11 @@
 
 /* Begin PBXBuildFile section */
 		402C72BB2300E77B00CD8CE0 /* CoordinatorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402C72BA2300E77B00CD8CE0 /* CoordinatorExtensions.swift */; };
+		4032A5662303469D00A96F79 /* FoursquareAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032A5652303469D00A96F79 /* FoursquareAPI.framework */; };
 		405F95B722FA0FBE001B3BD6 /* AroundMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405F95B422FA0FBE001B3BD6 /* AroundMeTests.swift */; };
 		405F95B822FA0FBE001B3BD6 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405F95B622FA0FBE001B3BD6 /* XCTestManifests.swift */; };
 		405F95EE22FA1FB6001B3BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405F95C222FA0FCC001B3BD6 /* AppDelegate.swift */; };
 		4065C0C022FDB38800745996 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065C0BF22FDB38800745996 /* CategoryService.swift */; };
-		4065C0C322FDB40300745996 /* ForsquareAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4065C0C222FDB40300745996 /* ForsquareAPI.framework */; };
 		408B07DB2300E51A00E0DD49 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B07DA2300E51A00E0DD49 /* ErrorView.swift */; };
 		408B07DD2300E5A500E0DD49 /* ErrorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B07DC2300E5A500E0DD49 /* ErrorCoordinator.swift */; };
 		40916FA722FF0849009050A2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FA122FF0849009050A2 /* AppCoordinator.swift */; };
@@ -34,7 +34,6 @@
 		40916FA922FF0849009050A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FA322FF0849009050A2 /* Coordinator.swift */; };
 		40916FAA22FF0849009050A2 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FA522FF0849009050A2 /* Injected.swift */; };
 		40916FAB22FF0849009050A2 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FA622FF0849009050A2 /* Resolver.swift */; };
-		40916FAD22FF086F009050A2 /* SampleData in Resources */ = {isa = PBXBuildFile; fileRef = 40916FAC22FF086F009050A2 /* SampleData */; };
 		40916FAF22FF0CFA009050A2 /* InitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FAE22FF0CFA009050A2 /* InitCoordinator.swift */; };
 		40916FB122FF329D009050A2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FB022FF329D009050A2 /* LoadingView.swift */; };
 		40916FB322FF455F009050A2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40916FB222FF455F009050A2 /* ActivityIndicator.swift */; };
@@ -70,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		402C72BA2300E77B00CD8CE0 /* CoordinatorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorExtensions.swift; sourceTree = "<group>"; };
+		4032A5652303469D00A96F79 /* FoursquareAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FoursquareAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		405F95B422FA0FBE001B3BD6 /* AroundMeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AroundMeTests.swift; path = Tests/AroundMeTests.swift; sourceTree = "<group>"; };
 		405F95B522FA0FBE001B3BD6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		405F95B622FA0FBE001B3BD6 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestManifests.swift; path = Tests/XCTestManifests.swift; sourceTree = "<group>"; };
@@ -84,7 +84,6 @@
 		40916FA322FF0849009050A2 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		40916FA522FF0849009050A2 /* Injected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		40916FA622FF0849009050A2 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
-		40916FAC22FF086F009050A2 /* SampleData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SampleData; sourceTree = "<group>"; };
 		40916FAE22FF0CFA009050A2 /* InitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCoordinator.swift; sourceTree = "<group>"; };
 		40916FB022FF329D009050A2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		40916FB222FF455F009050A2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -115,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4065C0C322FDB40300745996 /* ForsquareAPI.framework in Frameworks */,
+				4032A5662303469D00A96F79 /* FoursquareAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +131,7 @@
 		4065C0C122FDB40300745996 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4032A5652303469D00A96F79 /* FoursquareAPI.framework */,
 				4065C0C222FDB40300745996 /* ForsquareAPI.framework */,
 			);
 			name = Frameworks;
@@ -213,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				40BDA0242302033100BCE6CD /* f6.shared.global.fastly.net.cer */,
-				40916FAC22FF086F009050A2 /* SampleData */,
 				40A674A722FCE2C2003AE157 /* Assets.xcassets */,
 				40A674A822FCE2C2003AE157 /* Preview Content */,
 				40A674AA22FCE2C2003AE157 /* LaunchScreen.storyboard */,
@@ -380,7 +379,6 @@
 				40A674B822FCE2C2003AE157 /* config.plist in Resources */,
 				40A674B722FCE2C2003AE157 /* LaunchScreen.storyboard in Resources */,
 				40A674B622FCE2C2003AE157 /* Preview Assets.xcassets in Resources */,
-				40916FAD22FF086F009050A2 /* SampleData in Resources */,
 				40A674B522FCE2C2003AE157 /* Assets.xcassets in Resources */,
 				40BDA0252302033100BCE6CD /* f6.shared.global.fastly.net.cer in Resources */,
 			);

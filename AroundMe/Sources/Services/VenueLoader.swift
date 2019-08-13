@@ -6,7 +6,7 @@
 //
 
 import Combine
-import ForsquareAPI
+import FoursquareAPI
 import ApiProvider
 import MapKit
 

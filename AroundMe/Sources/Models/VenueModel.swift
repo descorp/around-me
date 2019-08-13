@@ -5,7 +5,7 @@
 //  Created by Vladimir Abramichev on 07/08/2019.
 //
 
-import ForsquareAPI
+import FoursquareAPI
 import Combine
 import MapKit
 

@@ -1,6 +1,6 @@
 //
 //  Categories.swift
-//  ForsquareAPI
+//  FoursquareAPI
 //
 //  Created by Vladimir Abramichev on 04/08/2019.
 //

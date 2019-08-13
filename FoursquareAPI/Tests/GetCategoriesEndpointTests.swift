@@ -9,7 +9,7 @@ import Foundation
 
 import XCTest
 import ApiProvider
-@testable import ForsquareAPI
+@testable import FoursquareAPI
 
 final class GetCategoriesEndpointTests: XCTestCase {
     

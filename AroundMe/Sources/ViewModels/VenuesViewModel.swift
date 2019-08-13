@@ -6,7 +6,7 @@
 //
 
 import Combine
-import ForsquareAPI
+import FoursquareAPI
 import MapKit
 
 class VenuesViewModel: ObservableObject {
@@ -43,7 +43,7 @@ class VenuesViewModel: ObservableObject {
     internal init(maxRadius: Double = 2000,
                   locationService: LocationService,
                   venueService: VenueLoader,
-                  categories: [ForsquareAPI.Category]) {
+                  categories: [FoursquareAPI.Category]) {
         self.maxRadius = maxRadius
         self.locationService = locationService
         self.venueLoader = venueService

@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "ForsquareAPI",
+    name: "FoursquareAPI",
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "ForsquareAPI",
-            targets: ["ForsquareAPI"]),
+            name: "FoursquareAPI",
+            targets: ["FoursquareAPI"]),
     ],
     dependencies: [
         .package(path: "../ApiProvider"),
@@ -18,12 +18,12 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "ForsquareAPI",
+            name: "FoursquareAPI",
             dependencies: ["ApiProvider"],
             path: "Sources"),
         .testTarget(
-            name: "ForsquareAPITests",
-            dependencies: ["ForsquareAPI"],
+            name: "FoursquareAPITests",
+            dependencies: ["FoursquareAPI"],
             path: "Tests"),
     ]
 )

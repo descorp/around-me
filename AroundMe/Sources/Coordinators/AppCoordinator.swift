@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 import ApiProvider
-import ForsquareAPI
+import FoursquareAPI
 
 class AppCoordinator: Coordinator {
     

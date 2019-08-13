@@ -7,10 +7,10 @@
 
 import Combine
 import SwiftUI
-import ForsquareAPI
+import FoursquareAPI
 
 protocol InitViewModelDelegate: class {
-    func didLoadCategories(_ categories: [ForsquareAPI.Category])
+    func didLoadCategories(_ categories: [FoursquareAPI.Category])
     func didFail(_ error: Error)
 }
 
@@ -39,7 +39,7 @@ class InitViewModel: ObservableObject {
         categoryLoader.getCategories()
     }
     
-    func receive(_ input: [ForsquareAPI.Category]) {
+    func receive(_ input: [FoursquareAPI.Category]) {
         DispatchQueue.main.async {
             self.isLoading = false
         }

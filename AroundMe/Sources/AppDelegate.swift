@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 import ApiProvider
-import ForsquareAPI
+import FoursquareAPI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

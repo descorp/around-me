@@ -7,24 +7,24 @@
 
 import XCTest
 import ApiProvider
-@testable import ForsquareAPI
+@testable import FoursquareAPI
 
-final class ForsquareAPITests: XCTestCase {
-    
+final class FoursquareAPITests: XCTestCase {
+
     let coordinates = Coordinates(lat: 52.313388, lng:  5.037687)
-    
+
     func testCoordinateQuery() {
         let sut = Endpoint.getVenues(at: coordinates)
-        
+
         XCTAssertEqual(sut.queryItems[0].value, "52.313388,5.037687")
     }
-    
+
     func testCategoryQuery() {
         let sut = Endpoint.getVenues(at: coordinates, categories: .metro, .food)
-        
+
         XCTAssertEqual(sut.queryItems[2].value!, "4bf58dd8d48988d1fd931735,4d4b7105d754a06374d81259")
     }
-    
+
     func testUrlBuilderConfiguredFromCustomDictionary() {
         let sut = ForsquareUrlRequestBuilder(with: Configuration(dictionary: ["client_id":"SOME_CLIENT_ID",
                                                                               "client_secret":"SOME_CLIENT_SECRET",
@@ -34,7 +34,7 @@ final class ForsquareAPITests: XCTestCase {
         XCTAssertEqual(try sut.buildRequest(for: Endpoint.test()).url!.absoluteString,
                        "http://SOME_URL.com/v5/testURL?client_id=SOME_CLIENT_ID&client_secret=SOME_CLIENT_SECRET&v=SOME_VERSION_DATE")
     }
-    
+
     func testUrlBuilderConfiguredFromConfigFile() {
         let sut = ForsquareUrlRequestBuilder(with: Configuration(bundle: Bundle(for: type(of: self))))
         XCTAssertEqual(try sut.buildRequest(for: Endpoint.test()).url!.absoluteString,

@@ -16,6 +16,7 @@ public enum Result<T> {
 public enum ApiProviderError: Error {
     case invalidURL
     case network(Error?)
+    case response(code: Int, message: String?)
     case parsingError
     case invalidImage
     case noData

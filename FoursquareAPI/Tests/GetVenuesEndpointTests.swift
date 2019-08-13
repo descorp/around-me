@@ -7,7 +7,7 @@
 
 import XCTest
 import ApiProvider
-@testable import ForsquareAPI
+@testable import FoursquareAPI
 
 final class GetVenuesEndpointTests: XCTestCase {
     

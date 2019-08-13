@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftUI
-import ForsquareAPI
+import FoursquareAPI
 
 class InitCoordinator: Coordinator {
 
@@ -27,7 +27,7 @@ class InitCoordinator: Coordinator {
 }
 
 extension InitCoordinator: InitViewModelDelegate {
-    func didLoadCategories(_ categories: [ForsquareAPI.Category]) {
+    func didLoadCategories(_ categories: [FoursquareAPI.Category]) {
         let venueCoordinator = VenuesCoordinator(categories: categories, parentCoordinator: self)
         venueCoordinator.start()
     }

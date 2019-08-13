@@ -5,7 +5,7 @@
 //  Created by Vladimir Abramichev on 07/08/2019.
 //
 
-import ForsquareAPI
+import FoursquareAPI
 import Combine
 import UIKit
 
@@ -16,7 +16,7 @@ class CategoryModel: ListItem {
     let name: String
     let iconUrl: String?
     
-    init(model: ForsquareAPI.Category) {
+    init(model: FoursquareAPI.Category) {
         id = model.id
         name = model.name
         iconUrl = model.icon.prefix + "\(defaultIconSize)" + model.icon.suffix.rawValue

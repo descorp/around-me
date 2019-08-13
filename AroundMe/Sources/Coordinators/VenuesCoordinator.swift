@@ -7,14 +7,14 @@
 
 import UIKit
 import SwiftUI
-import ForsquareAPI
+import FoursquareAPI
 
 class VenuesCoordinator: Coordinator {
     
-    let categories: [ForsquareAPI.Category]
+    let categories: [FoursquareAPI.Category]
     let viewModel: VenuesViewModel
     
-    init(categories: [ForsquareAPI.Category], parentCoordinator: Coordinator? ) {
+    init(categories: [FoursquareAPI.Category], parentCoordinator: Coordinator? ) {
         self.categories = categories
         self.viewModel = VenuesViewModel(locationService: Resolver.shared.get(),
                                          venueService: Resolver.shared.get(),

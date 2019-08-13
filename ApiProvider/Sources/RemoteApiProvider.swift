@@ -31,15 +31,19 @@ public class RemoteApiProvider: ApiProvider {
             return handler(.failure(ApiProviderError.invalidURL))
         }
         
-        let task = urlSession.dataTask(with: request) { data, _, error in
+        let task = urlSession.dataTask(with: request) { data, response, error in
             if let error = error {
-                handler(.failure(ApiProviderError.network(error)))
-                return
+                return handler(.failure(ApiProviderError.network(error)))
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                let error = ApiProviderError.response(code: httpResponse.statusCode,
+                                                      message: String(data: data ?? Data(), encoding: .utf8))
+                return handler(.failure(error))
             }
             
             guard let data = data else {
-                handler(.failure(ApiProviderError.noData))
-                return
+                return handler(.failure(ApiProviderError.noData))
             }
             
             do {
