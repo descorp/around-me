@@ -10,7 +10,9 @@ Venue are provided by Foursquare®
 ## Structure
 Project contains of 3 modules
 
-* API
+* APIProvider
+* FoursquareAPI
+* AroundMeApp
 
 
 ## Requirement
