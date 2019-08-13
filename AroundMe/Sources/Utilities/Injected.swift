@@ -8,16 +8,17 @@
 import Foundation
 
 @propertyWrapper
-struct Injected<T: AnyObject> {
+struct Injected<T> {
     private var _wrappedValue: T!
-    public var container: Resolver = Resolver.shared
+    
     public var wrappedValue: T {
         mutating get {
             if _wrappedValue == nil {
-                _wrappedValue = self.container.get()
+                _wrappedValue = Resolver.shared.get()
             }
             return _wrappedValue
         }
+        
         mutating set {
             _wrappedValue = newValue
         }

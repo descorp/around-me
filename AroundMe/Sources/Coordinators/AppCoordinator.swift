@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import ApiProvider
+import ForsquareAPI
 
 class AppCoordinator: Coordinator {
     
@@ -24,7 +25,7 @@ class AppCoordinator: Coordinator {
     }
     
     static fileprivate func loadDependencies() {
-        let apiProvider: ApiProvider = LocalApiProvider(bundle: Bundle.main, localPath: "SampleData")
+        let apiProvider: ApiProvider = RemoteApiProvider(with: ForsquareUrlRequestBuilder(with: Configuration(bundle: Bundle.main)))
         Resolver.shared.set(value: apiProvider)
         Resolver.shared.set(value: VenueLoaderImplementation(provider: Resolver.shared.get()) as VenueLoader)
         Resolver.shared.set(value: CategoryLoaderImplementation(provider: Resolver.shared.get()) as CategoryLoader)

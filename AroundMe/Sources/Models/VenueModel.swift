@@ -22,9 +22,13 @@ class VenueModel: NSObject, Identifiable {
         self.id = model.id
         self.name = model.name
     }
+    
+    override var hash: Int {
+        return id.hashValue
+    }
 }
 
-extension VenueModel: MKAnnotation {
+extension VenueModel: MapPin {
     var coordinate: CLLocationCoordinate2D {
         return location.coordinate
     }

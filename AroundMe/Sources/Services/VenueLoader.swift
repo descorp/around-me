@@ -24,6 +24,9 @@ class VenueLoaderImplementation: VenueLoader {
     }
     
     func getVenues(around coordinate: CLLocationCoordinate2D, category: CategoryModel, radius: Int = 250) {
+        #if DEBUG
+        print("\n- - - - - - - - - requested \(category.name) \(radius)m around - - - - - - \n")
+        #endif
         let forsquareCoordinate = Coordinates(lat: coordinate.latitude, lng: coordinate.longitude)
         apiProvider.request(Endpoint.getVenues(at: forsquareCoordinate, radius: radius, categories: category.id)) { response in
             switch response {

@@ -52,6 +52,9 @@
 		40A674B622FCE2C2003AE157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A674A922FCE2C2003AE157 /* Preview Assets.xcassets */; };
 		40A674B722FCE2C2003AE157 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A674AA22FCE2C2003AE157 /* LaunchScreen.storyboard */; };
 		40A674B822FCE2C2003AE157 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40A674AC22FCE2C2003AE157 /* config.plist */; };
+		40BDA0252302033100BCE6CD /* f6.shared.global.fastly.net.cer in Resources */ = {isa = PBXBuildFile; fileRef = 40BDA0242302033100BCE6CD /* f6.shared.global.fastly.net.cer */; };
+		40BDA027230210CF00BCE6CD /* UrlImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BDA026230210CF00BCE6CD /* UrlImage.swift */; };
+		40D715A72302C9E4003BE814 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D715A62302C9E4003BE814 /* Throttler.swift */; };
 		OBJ_32 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,9 @@
 		40A674A922FCE2C2003AE157 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40A674AB22FCE2C2003AE157 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40A674AC22FCE2C2003AE157 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		40BDA0242302033100BCE6CD /* f6.shared.global.fastly.net.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = f6.shared.global.fastly.net.cer; sourceTree = "<group>"; };
+		40BDA026230210CF00BCE6CD /* UrlImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImage.swift; sourceTree = "<group>"; };
+		40D715A62302C9E4003BE814 /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		"AroundMe::AroundMeTests::Product" /* AroundMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = AroundMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 				40916FA622FF0849009050A2 /* Resolver.swift */,
 				40916FBA2300CDD2009050A2 /* RenderingViewController.swift */,
 				402C72BA2300E77B00CD8CE0 /* CoordinatorExtensions.swift */,
+				40D715A62302C9E4003BE814 /* Throttler.swift */,
 			);
 			name = Utilities;
 			path = Sources/Utilities;
@@ -186,6 +193,7 @@
 				40916FB022FF329D009050A2 /* LoadingView.swift */,
 				40916FB222FF455F009050A2 /* ActivityIndicator.swift */,
 				408B07DA2300E51A00E0DD49 /* ErrorView.swift */,
+				40BDA026230210CF00BCE6CD /* UrlImage.swift */,
 			);
 			name = Views;
 			path = Sources/Views;
@@ -204,6 +212,7 @@
 		40A674A622FCE2C2003AE157 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40BDA0242302033100BCE6CD /* f6.shared.global.fastly.net.cer */,
 				40916FAC22FF086F009050A2 /* SampleData */,
 				40A674A722FCE2C2003AE157 /* Assets.xcassets */,
 				40A674A822FCE2C2003AE157 /* Preview Content */,
@@ -373,6 +382,7 @@
 				40A674B622FCE2C2003AE157 /* Preview Assets.xcassets in Resources */,
 				40916FAD22FF086F009050A2 /* SampleData in Resources */,
 				40A674B522FCE2C2003AE157 /* Assets.xcassets in Resources */,
+				40BDA0252302033100BCE6CD /* f6.shared.global.fastly.net.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +408,8 @@
 				40A674B222FCE2C2003AE157 /* DropDownList.swift in Sources */,
 				40A674B422FCE2C2003AE157 /* VenueModel.swift in Sources */,
 				40916FAA22FF0849009050A2 /* Injected.swift in Sources */,
+				40BDA027230210CF00BCE6CD /* UrlImage.swift in Sources */,
+				40D715A72302C9E4003BE814 /* Throttler.swift in Sources */,
 				40916FA822FF0849009050A2 /* VenuesCoordinator.swift in Sources */,
 				40A674B322FCE2C2003AE157 /* CategoryModel.swift in Sources */,
 				408B07DD2300E5A500E0DD49 /* ErrorCoordinator.swift in Sources */,

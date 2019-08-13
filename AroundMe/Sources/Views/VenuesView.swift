@@ -10,18 +10,18 @@ import SwiftUI
 import MapKit
 import Combine
 
-struct VenuesView : View {
-    
+struct VenuesView: View {
     @ObservedObject var viewModel: VenuesViewModel
     
     var body: some View {
         ZStack(alignment: .top) {
-            MapView(currentLocation: $viewModel.curentLocation, venues: $viewModel.venues)
+            MapView(currentLocation: $viewModel.curentLocation,
+                    venues: $viewModel.venues,
+                    radius: $viewModel.radius)
+                .edgesIgnoringSafeArea([.top, .bottom])
             DropDownList(rowHeight: 72,
                          selectedItem: $viewModel.selectedCategorie,
                          items: $viewModel.categories)
-                .padding(16)
-                .clipShape(RoundedRectangle(cornerRadius: 36.0, style: .continuous))
         }
     }
 }

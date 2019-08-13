@@ -7,13 +7,14 @@
 
 import ForsquareAPI
 import Combine
+import UIKit
 
 class CategoryModel: ListItem {
     private let defaultIconSize = 64
     
     let id: String
     let name: String
-    let iconUrl: String
+    let iconUrl: String?
     
     init(model: ForsquareAPI.Category) {
         id = model.id

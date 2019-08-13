@@ -9,17 +9,18 @@ import SwiftUI
 
 protocol ListItem: class, Hashable, Identifiable {
     var name: String { get }
+    var iconUrl: String? { get }
 }
 
 struct DropDownListItem<T>: View where T: ListItem {
     var item: T
-    
-    init(item: T) {
-        self.item = item
-    }
-    
+
     var body: some View {
         HStack(alignment: .center, spacing: 16.0) {
+            URLImage(url: self.item.iconUrl, contentMode: .scaleAspectFit)
+                .frame(width: 40, height: 40)
+                .background(Color.accentColor)
+                .cornerRadius(8)
             Text(item.name)
         }
     }
@@ -27,30 +28,38 @@ struct DropDownListItem<T>: View where T: ListItem {
 
 struct DropDownList<T>: View where T: ListItem {
     let rowHeight: CGFloat
-    @State var isColapsed = true
+    @State private var isColapsed = true
     @Binding var selectedItem: T
     @Binding var items: [T]
     
     var body: some View {
-        VStack(alignment: .center) {
-            DropDownListItem(item: self.selectedItem)
-                
-                .frame(height: self.rowHeight - 12.5)
-                .onTapGesture { self.isColapsed.toggle() }
+        VStack(alignment: .center, spacing: 0) {
+            if isColapsed {
+                Text(selectedItem.name)
+                    .frame(height: 42)
+                    .onTapGesture { self.isColapsed.toggle() }
+            }
+            
             if !isColapsed {
-                List(items) { item in
-                    Button(action: {
-                        self.onSelected(item: item)
-                        self.isColapsed = false
-                    }) {
-                        DropDownListItem(item: item)
-                            .frame(height: self.rowHeight - 12.5)
+                HStack() {
+                    List(items) { item in
+                        Button(action: {
+                            self.onSelected(item: item)
+                        }) {
+                            DropDownListItem(item: item)
+                                .frame(height: self.rowHeight - 12.5)
+                        }
                     }
+                    .listRowInsets(EdgeInsets())
+                    .frame(maxHeight: CGFloat(min(items.count, 4)) * rowHeight)
                 }
-                .listRowInsets(EdgeInsets())
-                .frame(maxHeight: CGFloat(min(items.count, 4)) * rowHeight)
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
             }
         }
+        .frame(width: UIScreen.main.bounds.width - 32)
+        .background(Color.white)
+        .cornerRadius(16)
+        .animation(.spring(), value: isColapsed)
     }
     
     func onSelected(item: T) {
