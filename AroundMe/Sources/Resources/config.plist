@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Common</key>
+    <dict>
+        <key>client_id</key>
+        <string>CLIENT_ID</string>
+        <key>client_secret</key>
+        <string>CLIENT_SECRET</string>
+        <key>url</key>
+        <string>https://api.foursquare.com</string>
+        <key>version</key>
+        <string>v2</string>
+        <key>version_date</key>
+        <string>20190804</string>
+    </dict>
+</dict>
+</plist>
