@@ -12,4 +12,5 @@ Replace `{CLIENT-ID}` and `{CLIENT_SECRET}` with your actual Forsquare credentia
 
 ## Screenshots
 
-// TODO
+![screenshot](https://github.com/descorp/around-me/blob/develop/AroundMe/Artworks/Aug-14-2019%2001-14-34.gif)
+![screenshot](https://github.com/descorp/around-me/blob/develop/AroundMe/Artworks/Aug-14-2019%2001-16-18.gif)
