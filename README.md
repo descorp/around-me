@@ -1,10 +1,9 @@
-
 [![codebeat badge](https://codebeat.co/badges/0711f644-38b5-4b49-9528-caaeb3c32c82)](https://codebeat.co/projects/github-com-descorp-around-me-master)
 ![Swift 5.1](https://img.shields.io/badge/Swift-5.1-green.svg?style=flat)
+# ![PIN](https://image.flaticon.com/icons/png/64/67/67347.png)
 
 # Around Me
 Mobile project to showcase Swift Package Manager, SwiftUI and Combine.
-Venue are provided by Foursquare®
 
 ## Structure
 Project contains of 3 modules
@@ -17,7 +16,8 @@ Library to access Foursquare API.
 Providers DTO and methods to access venuse and categories.
 
 ### [AroundMeApp](https://github.com/descorp/around-me/blob/develop/AroundMe/README.md)
-iOS app that allows to visulise venues around the user's current location.
+iOS app that allows to visulise venues around the user's current location. Venue are provided by Foursquare®
+
 Features SwiftUI, Combine, MVVM-C
 
 ## Requirement
@@ -31,8 +31,10 @@ To run this solution you need to install Xcode11 Version 11.0 beta 5
 ## Author
 Vladimir Abramichev, vladimir.abramichev@mail.ru
 
-## License
+## Credits
 AroundMe is available under the MIT license. See the LICENSE file for more info.
+
+Icon made by [Freepik](https://www.freepik.com/home) from www.flaticon.com
 
 ![powered by](https://uc281c5b026bc9352084f0ed0eb7.previews.dropboxusercontent.com/p/thumb/AAjpI1I0kIcHLds7nwE26sTjotwhWrRD-RhGpMDA67zoE-JmSez3PrH97KuOQ3pFkObBwePccpo-conca0UsxmYzgO9np1Jel7hNslYGxB7Jfjw-dHIPmzGg5Od6VqGu0tq8D2L8xMH-3T-Cf5e2rLHkxa2wuVN9uHmf7Rf8HIWOJfkub9X6cCrtxmvl9NsyZoX0yOSHHfZMErlldty5hpbzXKVm_GA4ffnBYAogEYV3hO43iIJwSFaFBNVbHkuWu86F6gXQ0iNJ5IwlqT8mfb-Vl7JbpcAEMago13v47jIHH15bp1s7YuuXubXv87y9LnPglyz-FBnDB7Rg_-zu5R7g/p.png?fv_content=true&size_mode=5)
 
