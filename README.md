@@ -1,6 +1,7 @@
 [![codebeat badge](https://codebeat.co/badges/0711f644-38b5-4b49-9528-caaeb3c32c82)](https://codebeat.co/projects/github-com-descorp-around-me-master)
 ![Swift 5.1](https://img.shields.io/badge/Swift-5.1-green.svg?style=flat)
-# ![PIN](https://image.flaticon.com/icons/png/64/67/67347.png)
+
+<img src="https://image.flaticon.com/icons/svg/854/854878.svg" alt="logo" width="120"/>
 
 # Around Me
 Mobile project to showcase Swift Package Manager, SwiftUI and Combine.
@@ -34,7 +35,7 @@ Vladimir Abramichev, vladimir.abramichev@mail.ru
 ## Credits
 AroundMe is available under the MIT license. See the LICENSE file for more info.
 
-Icon made by [Freepik](https://www.freepik.com/home) from www.flaticon.com
+Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
 
 ![powered by](https://uc281c5b026bc9352084f0ed0eb7.previews.dropboxusercontent.com/p/thumb/AAjpI1I0kIcHLds7nwE26sTjotwhWrRD-RhGpMDA67zoE-JmSez3PrH97KuOQ3pFkObBwePccpo-conca0UsxmYzgO9np1Jel7hNslYGxB7Jfjw-dHIPmzGg5Od6VqGu0tq8D2L8xMH-3T-Cf5e2rLHkxa2wuVN9uHmf7Rf8HIWOJfkub9X6cCrtxmvl9NsyZoX0yOSHHfZMErlldty5hpbzXKVm_GA4ffnBYAogEYV3hO43iIJwSFaFBNVbHkuWu86F6gXQ0iNJ5IwlqT8mfb-Vl7JbpcAEMago13v47jIHH15bp1s7YuuXubXv87y9LnPglyz-FBnDB7Rg_-zu5R7g/p.png?fv_content=true&size_mode=5)
 
